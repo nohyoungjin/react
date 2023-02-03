@@ -1,3 +1,12 @@
-export default function Page() {
-    return <p>Hello, Next.js 13</p>;
-  }
+import Layout from "components/Layout/Layout"
+import HomeContainer from "containers/Home/HomeContainer"
+
+const HomePage = () => {
+  return (
+    <Layout>
+      <HomeContainer />
+    </Layout>
+  )
+}
+
+export default HomePage
