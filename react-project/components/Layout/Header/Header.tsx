@@ -6,7 +6,7 @@ const Header = () => {
         <header className={styles.header}>
             <div className={styles.contents}>
                 <Link legacyBehavior href={"/"}>
-                    <a>This is Header</a>
+                    <a>상단</a>
                 </Link>
             </div>
             
