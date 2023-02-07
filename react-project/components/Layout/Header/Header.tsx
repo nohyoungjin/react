@@ -7,7 +7,7 @@ const Header = () => {
             <div className={styles.contents}>
 
                 <Link legacyBehavior href={"/"}>
-                    Home
+                    <a className="text-3xl">Home</a>
                 </Link>
 
                 <nav className={styles.nav}>
