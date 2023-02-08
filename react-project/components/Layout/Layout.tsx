@@ -9,7 +9,7 @@ const Layout = (props: {
         <div className={styles.layout}>
             <Header />
 
-            <main className={styles.main}>
+            <main className="mx-auto max-w-7xl h-[80vh] mt-[20px]">
                 {props.children}
             </main>
 
