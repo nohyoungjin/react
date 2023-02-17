@@ -1,13 +1,24 @@
+import React from 'react'
+import Head from 'next/head'
+
 import Layout from "components/Layout/Layout"
 import Page3 from "containers/Page/page3"
 
-const PageC = () => {
-
+export default function Test({ title }) {
   return (
-    <Layout>
-      <Page3 />
-    </Layout>
-  )
+      <>
+          <Head>
+              <meta property="og:title" content={title ? title: "default title"} />
+          </Head>
+          <Layout>
+            <div>dynamic meta test</div>
+          </Layout>
+      </>
+  ) 
 }
 
-export default PageC
+Test.getInitialProps = () => {
+  return {
+      title: "seo title" 
+  }
+}
