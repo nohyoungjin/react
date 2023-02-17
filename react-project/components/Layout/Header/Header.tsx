@@ -1,4 +1,3 @@
-import styles from './Header.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -35,6 +34,13 @@ const Header = () => {
                                     외부 json (axios)
                                 </a>
                             </Link>
+
+ 
+                            <Link legacyBehavior href={"page3"}>
+                                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                                    test
+                                </a>
+                            </Link>                           
                         </div>
                     </div>          
                 </div>            
