@@ -14,7 +14,7 @@ export default () => {
     return (
       <>
       <div className="mx-auto mb-[40px] text-center">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200">메인</h2>
+          <h2 className="text-5xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200">메인</h2>
       </div>      
 
       <Swiper

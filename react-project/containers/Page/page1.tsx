@@ -1,5 +1,5 @@
-// import Raect from 'react'
-import arrayData from 'components/Json/arrayData'
+import React from 'react';
+import arrayData from 'components/Json/arrayData.json';
 
 const Page1 = () => {
 
