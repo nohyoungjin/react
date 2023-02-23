@@ -1,32 +1,41 @@
-import { useEffect } from "react"
-import { useRouter } from "next/router"
+import Image from 'next/image'
+import profilePic from '/public/img5.png'
 
-import Head from 'next/head'
-import Layout from 'components/Layout/Layout'
+import Layout from "components/Layout/Layout"
 
-import posts from 'components/Json/posts.json'
-
-const Posts = () => {
-    const router = useRouter()
-    const post = posts[router.query.id]
-    if (!post) return (
-        <Layout>
-        <p className="text-center">데이터를 불러오지 못했습니다.</p>
-        </Layout>
-    )
-    
+// TODO: Need to fetch `posts` (by calling some API endpoint)
+//       before this page can be pre-rendered.
+export default function Blog({ posts }) {
     return (
-    <>
-    <Layout>
-        <Head>
-            <title>새로 만들어진 타이틀입니다.</title>
-        </Head>
-        <div>
-            <h1>{post.title}</h1>
-        </div>
+    <Layout>  
+      <p>페이지 콘텐츠가 외부 데이터에 종속</p> <br></br>
+      <Image
+        src='/img5.png'
+        alt="Picture of the author"
+        width={330}
+        height={116}
+        priority
+      /> <br></br>
+      <ul>
+        {posts.map((post) => (
+          <li>{post.numx} {post.time}</li>
+        ))}
+      </ul>
     </Layout>
-    </>
     )
-}
+  }
 
-export default Posts
+  // This function gets called at build time
+export async function getStaticProps() {
+    // Call an external API endpoint to get posts
+    const res = await fetch('https://nohyoungjin.github.io/apitest/db.json')
+    const posts = await res.json()
+  
+    // By returning { props: { posts } }, the Blog component
+    // will receive `posts` as a prop at build time
+    return {
+      props: {
+        posts,
+      },
+    }
+  }

@@ -25,7 +25,7 @@ const Header = () => {
                         <div className="flex space-x-4">
                             <Link legacyBehavior href={"page1"}>
                                 <a className="text-sm font-medium text-gray-700 hover:text-gray-900">
-                                    로컬 json (map)
+                                    로컬 json(map)
                                 </a>
                             </Link>
 
@@ -35,12 +35,17 @@ const Header = () => {
                                 </a>
                             </Link>
 
- 
                             <Link legacyBehavior href={"page3"}>
                                 <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                                    test
+                                    이미지
                                 </a>
-                            </Link>                           
+                            </Link>   
+
+                            <Link legacyBehavior href={"page4"}>
+                                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                                    글꼴(구글)
+                                </a>
+                            </Link>                         
                         </div>
                     </div>          
                 </div>            
