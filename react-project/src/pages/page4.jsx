@@ -1,12 +1,11 @@
 // pages/_app.js
 import { Inter } from '@next/font/google'
+import Layout from "components/Layout/Layout"
 
 const inter = Inter({ 
   weight: '700',
   subsets: ['latin'] 
 })
-
-import Layout from "components/Layout/Layout"
 
 // TODO: Need to fetch `posts` (by calling some API endpoint)
 //       before this page can be pre-rendered.
@@ -41,4 +40,4 @@ export async function getServerSideProps() {
   
     // Pass data to the page via props
     return { props: { data } }
-  } 
+} 

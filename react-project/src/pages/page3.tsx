@@ -1,6 +1,4 @@
 import Image from 'next/image'
-import profilePic from '/public/img5.png'
-
 import Layout from "components/Layout/Layout"
 
 // TODO: Need to fetch `posts` (by calling some API endpoint)
@@ -25,8 +23,8 @@ export default function Blog({ posts }) {
     )
   }
 
-  // This function gets called at build time
-export async function getStaticProps() {
+// This function gets called at build time
+export const getStaticProps: GetStaticProps = async (context) => {
     // Call an external API endpoint to get posts
     const res = await fetch('https://nohyoungjin.github.io/apitest/db.json')
     const posts = await res.json()

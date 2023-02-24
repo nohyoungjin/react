@@ -31,7 +31,7 @@ const Header = () => {
 
                             <Link legacyBehavior href={"page2"}>
                                 <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                                    외부 json (axios)
+                                    외부 json(axios)
                                 </a>
                             </Link>
 
@@ -45,7 +45,19 @@ const Header = () => {
                                 <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
                                     글꼴(구글)
                                 </a>
-                            </Link>                         
+                            </Link>        
+
+                            <Link legacyBehavior href={"page5?pid=query"}>
+                                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                                    동적경로
+                                </a>
+                            </Link>      
+
+                            <Link legacyBehavior href={"page6"}>
+                                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                                    스크립트(인라인)
+                                </a>
+                            </Link>                                                                           
                         </div>
                     </div>          
                 </div>            
