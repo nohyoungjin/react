@@ -57,7 +57,13 @@ const Header = () => {
                                 <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
                                     스크립트(인라인)
                                 </a>
-                            </Link>                                                                           
+                            </Link>           
+
+                             <Link legacyBehavior href={"page7"}>
+                                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                                    페이징
+                                </a>
+                            </Link>                                                                                               
                         </div>
                     </div>          
                 </div>            
