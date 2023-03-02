@@ -53,7 +53,7 @@ const Header = () => {
                                 </a>
                             </Link>      
 
-                            <Link legacyBehavior href={"page6"}>
+                            <Link legacyBehavior href={"page6"} shallow>
                                 <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
                                     스크립트(인라인)
                                 </a>
