@@ -18,6 +18,7 @@
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "kill-port": "^2.0.1",
+    "mysql": "^2.18.1",
     "mysql2": "^3.1.2",
     "next": "13.1.6",
     "react": "18.2.0",

@@ -63,7 +63,13 @@ const Header = () => {
                                 <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
                                     페이징
                                 </a>
-                            </Link>                                                                                               
+                            </Link>     
+
+                              <Link legacyBehavior href={"page9"}>
+                                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                                    폼 유효성 검사
+                                </a>
+                            </Link>                                                                                                                        
                         </div>
                     </div>          
                 </div>            
