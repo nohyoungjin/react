@@ -1,12 +1,13 @@
 import type { AppProps } from 'next/app'
 
 // pages/_app.js
-import { Dongle } from '@next/font/google'
+import { Roboto } from '@next/font/google'
 
-const roboto = Dongle({
-  weight: '700',
+const roboto = Roboto({
+  weight: '400',
   subsets: ['latin'],
 })
+
 
 import '@/styles/globals.css'
 import '@/styles/common.css'
