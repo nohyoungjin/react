@@ -65,11 +65,17 @@ const Header = () => {
                                 </a>
                             </Link>     
 
-                              <Link legacyBehavior href={"page9"}>
+                            <Link legacyBehavior href={"page9"}>
                                 <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
                                     폼 유효성 검사
                                 </a>
-                            </Link>                                                                                                                        
+                            </Link>        
+
+                             <Link legacyBehavior href={"page10"}>
+                                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                                    MySql 연동(Prisma)
+                                </a>
+                            </Link>                                                                                                                                             
                         </div>
                     </div>          
                 </div>            
