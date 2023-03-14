@@ -6,10 +6,10 @@ import Layout from "components/Layout/Layout"
 
 const PAGE_LIMIT = 1
 
-export default function MyPage({ data }) {
+export default function MyPage({ data }: { data: any }) {
   const [currentPage, setCurrentPage] = useState(0)
 
-  const handlePageChange = ({ selected }) => {
+  const handlePageChange = ({ selected }: { selected: any }) => {
     setCurrentPage(selected)
   }
 
@@ -22,7 +22,7 @@ export default function MyPage({ data }) {
     <Layout>
     <div>
       <ul>
-        {currentData.map(item => (
+        {currentData.map((item: any) => (
           <li key={item.numx}>{item.numx}</li>
         ))}
       </ul>

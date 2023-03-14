@@ -18,14 +18,14 @@ export default function Home() {
 
   return (
     <Layout>
-    <div>
-      {data.map((item) => (
-        <div key={item.id}>
-          <p>Name: {item.name}</p>
-          <p>Age: {item.age}</p>
-        </div>
-      ))}
-    </div>
+      <div>
+        {data.map((item) => (
+          <div key={item.id}>
+            <p>Name: {item.name}</p>
+            <p>Age: {item.age}</p>
+          </div>
+        ))}
+      </div>
     </Layout>
   )
 }

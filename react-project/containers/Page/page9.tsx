@@ -3,10 +3,10 @@ import { useState } from 'react'
 function MyForm() {
   const [value1, setValue1] = useState('')
   const [value2, setValue2] = useState('')
-  const [error1, setError1] = useState(null)
-  const [error2, setError2] = useState(null)
+  const [error1, setError1] = useState<string>('')
+  const [error2, setError2] = useState<string>('')
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault()
 
     if (value1.trim() === '') {
@@ -14,13 +14,13 @@ function MyForm() {
     } else if (isNaN(value1)) {
       setError1('숫자를 입력해주세요.')
     } else {
-      setError1(null)
+      setError1('')
     }
 
     if (value2.trim() === '') {
       setError2('필수 입력값입니다.')
     } else {
-      setError2(null)
+      setError2('')
     }
 
     // 모든 입력값에 대한 검사를 수행한 후, 검사에 실패한 에러 메시지가 존재하는 경우
@@ -29,6 +29,7 @@ function MyForm() {
     }
 
     // 입력값 검사에 통과한 경우 폼 제출 처리 로직
+
   }
 
   return (
@@ -42,9 +43,8 @@ function MyForm() {
                         {error1} 
                     </p>            
                 </label>
-                &nbsp;
                 <label>
-                    <span className="block text-sm font-medium text-slate-700">name</span>
+                    <span className="block mt-4 text-sm font-medium text-slate-700">name</span>
                     <input type="text" className="mt-2 px-3 py-2 bg-white border shadow-sm border-slate-200 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 contrast-more:border-slate-400 contrast-more:placeholder-slate-500" value={value2} onChange={(e) => setValue2(e.target.value)} />
                     <p className="mt-2 text-sm text-slate-600 opacity-4 contrast-more:opacity-100">
                         {error2} 
