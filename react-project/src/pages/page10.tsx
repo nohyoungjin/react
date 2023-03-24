@@ -44,18 +44,46 @@ export default function Home({ data }) {
                     ))}
                 </ul>
 
+                <br />
+                데이터 입력
+                <br />            
+
                 <form onSubmit={saveMovie}>
-                    <input type="text" placeholder="Title" name="title" onChange={e => setFormData({ ...formData, title: e.target.value })}/>
-                    <input type="text" placeholder="Year" name="year" onChange={e => setFormData({ ...formData, year: +e.target.value })} />
-                    <textarea name="description" id="" cols="30" rows="10" placeholder="Description" onChange={e => setFormData({ ...formData, description: e.target.value })} />
-                    <input type="text" placeholder="Slug" name="slug" onChange={e => setFormData({ ...formData, slug: e.target.value })} />
-                    <button type="submit">Add movie</button>
+                    <input 
+                        // value={inputData.title}
+                        type="text" 
+                        placeholder="제목" 
+                        name="title" 
+                        onChange={e => setFormData({ ...formData, title: e.target.value })}
+                    />
+                    <input 
+                        // value={inputData.year}
+                        type="text" 
+                        placeholder="년도" 
+                        name="year" 
+                        onChange={e => setFormData({ ...formData, year: +e.target.value })} 
+                    />
+                    <textarea 
+                        name="description" 
+                        id="" 
+                        cols="30" 
+                        rows="1" 
+                        placeholder="설명" 
+                        onChange={e => setFormData({ ...formData, description: e.target.value })} 
+                    />
+                    <input 
+                        type="text" 
+                        placeholder="Slug" 
+                        name="slug" 
+                        onChange={e => setFormData({ ...formData, slug: e.target.value })} 
+                    />
+                    <button type="submit">저장</button>
                 </form>
 
             </main>
         </div>
         </Layout>
-    );
+    )
 }
 
 export async function getServerSideProps() {
@@ -67,4 +95,5 @@ export async function getServerSideProps() {
             data: movies
         }
     }
+    
 }

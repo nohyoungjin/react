@@ -71,7 +71,7 @@ const Header = () => {
                                 </a>
                             </Link>        
 
-                             <Link legacyBehavior href={"/page10"}>
+                             <Link legacyBehavior href={"/page11"}>
                                 <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
                                     MySql 연동(Prisma)
                                 </a>
