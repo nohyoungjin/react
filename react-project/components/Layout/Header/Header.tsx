@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+import { AcademicCapIcon } from '@heroicons/react/20/solid';
+import { BeakerIcon } from '@heroicons/react/24/outline';
+import { PlayIcon } from '@heroicons/react/24/solid';
+
 const Header = () => {
     return (
 
@@ -75,7 +79,13 @@ const Header = () => {
                                 <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
                                     MySql 연동(Prisma)
                                 </a>
-                            </Link>                                                                                                                                             
+                            </Link>            
+
+                               <Link legacyBehavior href={"/useSwr"}>
+                                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                                    Swr
+                                </a>
+                            </Link>                                                                                                                                                               
                         </div>
                     </div>          
                 </div>            

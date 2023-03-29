@@ -1,11 +1,10 @@
-// pages/api/data.js
-
-const data = [
-    { id: 1, name: 'John', age: 30 },
-    { id: 2, name: 'Jane', age: 25 },
-    { id: 3, name: 'Bob', age: 40 },
+[
+  {
+      "id": "1",
+      "name": "진양철"
+  },
+  {
+      "id": "2",
+      "name": "진도준"
+  }
 ]
-  
-export default (req, res) => {
-  res.status(200).json(data);
-}

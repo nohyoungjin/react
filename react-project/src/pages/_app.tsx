@@ -8,7 +8,6 @@ const roboto = Roboto({
   subsets: ['latin'],
 })
 
-
 import '@/styles/globals.css'
 import '@/styles/common.css'
 

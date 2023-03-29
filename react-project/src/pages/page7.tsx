@@ -4,7 +4,7 @@ import ReactPaginate from 'react-paginate'
 
 import Layout from "components/Layout/Layout"
 
-const PAGE_LIMIT = 1
+const PAGE_LIMIT = 10
 
 export default function MyPage({ data }: { data: any }) {
   const [currentPage, setCurrentPage] = useState(0)
@@ -23,13 +23,13 @@ export default function MyPage({ data }: { data: any }) {
     <div>
       <ul>
         {currentData.map((item: any) => (
-          <li key={item.numx}>{item.numx}</li>
+          <li key={item.numx}>{item.coxt}</li>
         ))}
       </ul>
       <ReactPaginate
         pageCount={Math.ceil(data.length / PAGE_LIMIT)}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={5}
+        marginPagesDisplayed={1}
+        pageRangeDisplayed={1}
         onPageChange={handlePageChange}
         containerClassName={'pagination'}
         activeClassName={'active'}
