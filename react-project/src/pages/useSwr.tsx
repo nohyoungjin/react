@@ -1,9 +1,10 @@
-import {useState} from 'react'
 import useSWR, { SWRConfig } from 'swr'
+import useSWRInfinite from 'swr/infinite'
+
 import Layout from 'components/Layout/Layout'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
-const API = 'https://nohyoungjin.github.io/apitest/db.json' 
+const API = 'https://nohyoungjin.github.io/apitest/user.json' 
 
 export async function getServerSideProps() {
     const repoInfo = await fetcher(API)
@@ -17,20 +18,19 @@ export async function getServerSideProps() {
 }
 
 function Repo() {
-
     const { data, error, isLoading } = useSWR(API)
 
     if (error) return "An error has occurred."
     if (isLoading) return "Loading..."
 
     return (
-    <Layout>
-        <ul>
-            {data.map(item => (
-                <li key={item.numx}>🍴 {item.numx}. {item.coxt} ✨ 👁</li>
-            ))}
-        </ul>
-    </Layout>
+        <Layout>
+            <ul>
+                {data?.map(item => (
+                    <li key={item.id}>🍴 {item.name} ✨ 👁</li>
+                ))}
+            </ul>
+        </Layout>
     )
 }
 
