@@ -1,14 +1,36 @@
+import { useState, useEffect } from 'react'
+import { useTheme } from 'next-themes'
+
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { AcademicCapIcon } from '@heroicons/react/20/solid';
-import { BeakerIcon } from '@heroicons/react/24/outline';
-import { PlayIcon } from '@heroicons/react/24/solid';
-
 const Header = () => {
-    return (
 
-    <nav className="border-b border-gray-200">
+    const {systemTheme, theme, setTheme} = useTheme()
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    const renderThemechanger = () => {
+        if (!mounted) return null
+
+        const currentTheme = theme === 'system' ? systemTheme : theme
+
+        if (currentTheme === 'dark') {
+            return (
+                <div className="w-20 h-7" role="button" onClick={() => setTheme('light')}>라이트</div>
+            )
+        } else {
+            return (
+                <div className="w-20 h-7" role="button" onClick={() => setTheme('dark')}>다크</div>
+            )
+        }
+    }
+
+    return (
+    <nav className="border-b border-gray-200 mb-7">
         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-0">
             <div className="relative flex h-16 items-center justify-between">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -85,14 +107,15 @@ const Header = () => {
                                 <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
                                     Swr
                                 </a>
-                            </Link>                                                                                                                                                               
+                            </Link>              
+
+                            {renderThemechanger()}                                                                                                                                                 
                         </div>
                     </div>          
                 </div>            
             </div>
         </div>
     </nav>
-
     )
 }
 

@@ -3,7 +3,9 @@ import Page1 from "containers/Page/page1"
 
 const PageA = () => {
   return (
-    <Layout>
+    <Layout pageMeta={{
+      title: '첫번째 페이지'
+    }}>
       <Page1 />
     </Layout>
   )

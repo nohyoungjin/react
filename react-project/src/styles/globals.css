@@ -37,3 +37,9 @@
     background-color: #0070f3;
     border-color: #0070f3;
   }
+
+  html.dark body {
+    background: #000;
+    color: #fff;
+  }
+
