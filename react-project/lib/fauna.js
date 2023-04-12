@@ -49,27 +49,39 @@ class QueryManager {
         .then(res => flattenData(res))
     }
 
+    getPostBySlug(slug) {
+        return this.client
+        .query(q.Get(q.Match(q.Index("posts_search_by_slug"), slug)))
+        .then(res => flattenData(res))
+    }
+
     getPosts(options = {}) {
         return this.client
         .query(
-            /* q.Map(
+            q.Map(
                 q.Paginate(
                     q.Join(
-                        q.Match(q.Index('posts_search_by_published_at_desc'), true),
+                        q.Match(q.Index('posts_search_by_published'), true),
                         q.Index('posts_sort_by_published_at_desc')
                     ),
                     options
                 ),
                 q.Lambda(['published_at', 'ref'], q.Get(q.Var('ref')))
-            ) */
-            q.Map(
+            )
+            /* q.Map(
                 q.Paginate(q.Documents(q.Collection("blog_posts"))),
                 q.Lambda("X", q.Get(q.Var("X")))
-            )
+            ) */
         )
         .then(res => flattenData(res))
     }
 
+    getAllSlugs() {
+        return this.client
+        .query(
+            q.Paginate(q.Match(q.Index("all_slugs")))
+        )
+    }
 }
 
 const faunaQueries = new QueryManager()

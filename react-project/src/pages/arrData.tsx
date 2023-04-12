@@ -1,12 +1,12 @@
-import Layout from "components/Layout/Layout"
-import Page1 from "containers/Page/page1"
+import Layout from 'components/Layout/Layout'
+import Join from 'containers/Page/arrData'
 
 const PageA = () => {
   return (
     <Layout pageMeta={{
       title: '첫번째 페이지'
     }}>
-      <Page1 />
+      <Join />
     </Layout>
   )
 }

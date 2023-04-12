@@ -1,7 +1,7 @@
 import React from 'react';
 import arrayData from 'components/Json/arrayData.json';
 
-const Page1 = () => {
+const arrData = () => {
 
     const newArrayData = arrayData.map((item, index) => {
         return (
@@ -34,4 +34,4 @@ const Page1 = () => {
     ) 
 }
 
-export default Page1
+export default arrData

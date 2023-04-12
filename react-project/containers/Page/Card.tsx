@@ -2,7 +2,12 @@ import Link from 'next/link'
 
 const Card = props => (
    <Link
-    href={`/`}
+    key={props.id}
+    href={
+        props.published
+        ? `/blog/${encodeURIComponent(props.slug)}`
+        : `/drafts/${props.id}`
+    }
     className="rounded-md border hover:shadow-xl transition-shadow p-6"
     >
         <h3 className="text-3xl font-bold leading-snug tracking-tight mb-2 truncate">
@@ -12,7 +17,7 @@ const Card = props => (
             <div className="flex items-center space-x-2 mb-4">
                 <img
                     src={props.author?.image}
-                    className="border-2 border-blue-600 rounded-full w-12 h-12"
+                    className="border-blue-600 rounded-full w-12 h-12"
                 />
                 <div className="text-sm">
                     <p className="font-semibold">{props.author?.name}</p>

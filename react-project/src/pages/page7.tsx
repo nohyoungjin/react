@@ -1,49 +1,86 @@
-import { useState } from 'react'
-import axios from 'axios'
-import ReactPaginate from 'react-paginate'
-
+import { useState, useRef, useCallback } from 'react'
 import Layout from "components/Layout/Layout"
+import TodoTemplate from "containers/Page/TodoTemplate"
+import TodoInsert from "containers/Page/TodoInsert"
+import TodoList from "containers/Page/TodoList"
 
-const PAGE_LIMIT = 10
-
-export default function MyPage({ data }: { data: any }) {
-  const [currentPage, setCurrentPage] = useState(0)
-
-  const handlePageChange = ({ selected }: { selected: any }) => {
-    setCurrentPage(selected)
+function createBulkTodos() {
+  const array = []
+  for (let i = 1; i <= 2500; i++) {
+    array.push({
+      id: i,
+      text: `할 일 ${i}`,
+      checked: false,
+    })
   }
+  return array
+}
 
-  const startIndex = currentPage * PAGE_LIMIT
-  const endIndex = startIndex + PAGE_LIMIT
+const App = () => {
 
-  const currentData = data.slice(startIndex, endIndex)
+  /* const [todos, setTodos] = useState([
+    {
+      id: 1,
+      text: '리액트의 기초',
+      checked: true,
+    },
+    {
+      id: 2,
+      text: '컴포넌트 스타일링',
+      checked: true,
+    },
+    {
+      id: 3,
+      text: '일정관리',
+      checked: true,
+    },   
+  ]) */
+
+  const [todos, setTodos] = useState(createBulkTodos)
+
+  // 고유값으로 사용될 id
+  // ref를 사용하여 변수담기
+  const nextId = useRef(4)
+
+  const onInsert = useCallback(
+    text => {
+      const todo = {
+        id: nextId.current,
+        text,
+        checked: false,
+      }
+      setTodos(todos => todos.concat(todo))
+      nextId.current += 1
+    },
+    [todos]
+  )
+
+  const onRemove = useCallback(
+    id => {
+      setTodos(todos => todos.filter(todo => todo.id !== id))
+    },
+    [todos]
+  )
+
+  const onToggle = useCallback(
+    id => {
+      setTodos(todos => 
+        todos.map(todo => 
+          todo.id === id ? { ...todo, checked: !todo.checked } : todo,)
+      )
+    },
+    [todos]
+  )
 
   return (
     <Layout>
-    <div>
-      <ul>
-        {currentData.map((item: any) => (
-          <li key={item.numx}>{item.coxt}</li>
-        ))}
-      </ul>
-      <ReactPaginate
-        pageCount={Math.ceil(data.length / PAGE_LIMIT)}
-        marginPagesDisplayed={1}
-        pageRangeDisplayed={1}
-        onPageChange={handlePageChange}
-        containerClassName={'pagination'}
-        activeClassName={'active'}
-      />
-    </div>
+      <TodoTemplate>
+        <TodoInsert onInsert={onInsert} />
+        <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
+      </TodoTemplate>
     </Layout>
   )
+
 }
 
-export async function getStaticProps() {
-  const res = await axios.get('https://nohyoungjin.github.io/apitest/db.json')
-  const data = await res.data
-
-  return {
-    props: { data },
-  }
-}
+export default App
