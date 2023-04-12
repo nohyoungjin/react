@@ -91,9 +91,9 @@ const Header = () => {
                                 </a>
                             </Link>     
 
-                            <Link legacyBehavior href={"/page9"}>
+                            <Link legacyBehavior href={"/newsViewer"}>
                                 <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                                    폼 유효성 검사
+                                    뉴스뷰어
                                 </a>
                             </Link>        
 
