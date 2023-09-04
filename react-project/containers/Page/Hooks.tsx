@@ -22,17 +22,29 @@ const Info = () => {
 
     return (
         <div>
-            <input
-                type="text"
-                value={name}
-                onChange = {onChangeName}
-            />
-            <input
-                type="text"
-                value={nickname}
-                onChange = {onChangeNickname}
-            />
-            <p>이름 {name} / 닉네임 {nickname}</p>
+            <label for="firstname">
+                이름
+                <input 
+                    type="text" 
+                    value={name}
+                    onChange = {onChangeName}
+                    placeholder="First name" 
+                required />
+            </label>
+
+            <label for="firstname">
+                닉네임
+                <input
+                    type="text"
+                    value={nickname}
+                    onChange = {onChangeNickname}
+                />
+            </label>
+
+            <div class="grid">
+                <p>이름 {name}</p>
+                <p>닉네임 {nickname}</p>
+            </div>
         </div>
     )
 }

@@ -13,8 +13,6 @@ const NotFound = () => {
                     홈으로 돌아가기
                 </a>
             </Link>
-            
-            
         </div>
     </Layout>
     )

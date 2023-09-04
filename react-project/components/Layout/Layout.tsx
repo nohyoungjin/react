@@ -14,19 +14,20 @@ const Layout = ({ children, pageMeta }) => {
 
     return (
         <>
-        <Head>
-            <title>{meta.title}</title>
-            <meta property="og:url" content={`http:localhost:3000${router.asPath}`} />
-        </Head>
-        <div className="min-h-screen flex flex-col justify-center">
+            <Head>
+                <title>{meta.title}</title>
+                <meta property="og:url" content={`http:localhost:3000${router.asPath}`} />
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"></link>
+                <link rel="" href="https://tailwindui.com/v2-assets/components.css"></link>
+            </Head>
+
             <Header />
 
-            <main className="flex-grow container mx-auto px-4 sm:px-6">
+            <main className="container">
                 {children}
             </main>
 
             <Footer />
-        </div>
         </>
     )
 

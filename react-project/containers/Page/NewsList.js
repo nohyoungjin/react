@@ -12,7 +12,7 @@ const NewsList = () => {
             setLoading(true)
             try {
                 const response = await axios.get(
-                    'https://newsapi.org/v2/top-headlines?country=kr&apiKey=107d6d6bd85f4a888a3573a6d81057d9'    
+                    'https://newsapi.org/v2/top-headlines?country=kr&category=business&apiKey=107d6d6bd85f4a888a3573a6d81057d9'
                 )
                 setArticles(response.data.articles)                
             } catch(err) {
