@@ -1,20 +1,32 @@
 import Link from 'next/link'
-import Layout from "components/Layout/Layout"
+import Layout from 'components/Layout/Layout'
+
+import { useEffect } from 'react'
 
 const NotFound = () => {
+
+    useEffect(() => {
+        document.body.classList.add('page-404')
+        return () => {
+            document.body.classList.remove('page-404')
+        }        
+    }, [])
+
     return(
-    <Layout 
-        pageMeta={{
-            title: '404 에러',
-    }}>
-        <div className="text-center">
+        <Layout 
+            pageMeta={{
+                title: '404 에러',
+        }}>
+            <h1>
+                404 Error <br />
+            </h1>
+
             <Link legacyBehavior href={"/"}>
-                <a className="group inline-flex items-center h-9 rounded-full text-sm font-semibold whitespace-nowrap px-3 focus:outline-none focus:ring-2 bg-indigo-50 text-indigo-600 hover:bg-indigo-200 hover:text-indigo-700 focus:ring-indigo-500 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500 mt-8">
+                <a role="button">
                     홈으로 돌아가기
                 </a>
             </Link>
-        </div>
-    </Layout>
+        </Layout>
     )
 
 }

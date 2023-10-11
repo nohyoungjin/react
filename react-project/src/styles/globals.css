@@ -13,10 +13,8 @@
     }
 } */
 
-@import "https://unpkg.com/open-props";
-
-.swiper {height:300px}
-.swiper-slide {margin:0 auto;text-align:center}
+/* the props */
+@import "open-props/open-props.min.css";
 
 html.dark body {
   background: var(--gray-12);
@@ -64,6 +62,10 @@ nav {
     backdrop-filter: saturate(180%) blur(20px);
 }
 
+nav ul li a {
+    font-size: var(--font-size-1);
+}
+
 main {
     padding-top: calc(calc(1rem * 4) + 2.5rem);
     padding-bottom: calc(calc(1rem * 1) + 1.5rem);
@@ -74,4 +76,127 @@ footer {
     padding-top: calc(calc(1rem * 1) + 0.5rem);
     padding-bottom: calc(calc(1rem * 1) + 0.5rem);
     text-align: center;
+}
+
+footer h2 {
+    margin-bottom: 0.5rem;
+}
+
+body.home main {
+    text-align: center;
+}
+
+body.home .swiper {height:300px}
+body.home .swiper-slide {margin:0 auto;text-align:center}
+
+body.page-404 main {
+    text-align: center;
+}
+
+/* */
+
+body.page-movie ul {
+    list-style: none;
+}
+
+body main .top {
+    text-align: right;
+    padding: 0 0 var(--size-5);       
+}
+
+body.page-movie main .list-wrap ul > li {
+    list-style: none;
+    width: 100%;
+    padding: 0 0 var(--size-5); 
+}
+
+body.page-movie ul li a {
+    text-decoration: none;
+}
+
+.bod-container {display:flex;flex-direction:row;justify-content:space-between;align-items:center}
+.box-cont {display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;width:100%;margin-right:100px;overflow-wrap:anywhere}
+
+.box-cont span {margin-bottom:10px;font-size:1.1rem;font-weight:400;color:#8b95a1;line-height:1.4}
+.box-cont h4 {margin-bottom:10px;font-size:1.4rem;font-weight:600;line-height:1.4;word-break:keep-all;-webkit-transition:0.2s ease-in-out;transition:0.2s ease-in-out}
+
+a:hover .box-cont h4 {color:#3182f6}
+
+.box-cont p {margin-bottom:10px;width:100%;font-size:17px;font-weight:300;color:#6b7684;line-height:27px}
+.box-cont time {font-size:15px;font-weight:400;color:#8b95a1;line-height:1.4}
+
+.box-img {min-width:350px}
+
+.box-rel {position:relative;width:100%;height:0;padding-top:67.5%}
+.box-abs {position:absolute;top:0;left:0;width:100%;height:100%}
+
+.img-css {overflow:hidden;width:100%;height:100%;border:1px solid rgba(2, 32, 71, 0.05);object-fit:cover;border-radius:16px;transform:translateZ(0);transition:0.2s ease-in-out}
+
+.img-css {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+}
+
+.box-img img {display:block;position:absolute;width:0px;height:0px;min-width:100%;max-width:100%;min-height:100%;max-height:100%;margin:0 auto;border-radius:16px;inset:0px;object-fit:cover}
+a:hover .img-css {box-shadow:rgb(0 0 33 / 7%) 0px 16px 22.4px 4.8px, rgb(0 0 33 / 5%) 0px 3.2px 16px 0px, rgb(0 0 33 / 7%) 0px 0px 1px 0px;transform:translate3D(0, -3%, 0)}
+
+/* */
+
+.bod-head {display:flex;flex-direction:column;justify-content:flex-start;align-items:center;padding:25px 0 40px}
+
+.bod-head .cat {display:inline-block;margin:0 0 15px;font-size:24px;font-weight:700;color:#e43737}
+.bod-head .tit {margin-bottom:25px;font-size:38px;font-weight:500;color:#333d4b;line-height:48px;text-align:center;word-break:keep-all}
+.bod-head .img {max-width:100%;height:auto;min-height:1px;margin-top:30px;border-radius:16px}
+
+:root {
+    --max-inline-body: calc(100vw - (var(--size-8) * 2));
+    --brand-bg-gradient: linear-gradient(to bottom, var(--purple-3), var(--violet-3), var(--indigo-3), var(--cyan-3));
+
+    --surface-1: var(--gray-0);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row li {
+    list-style: none;
+}
+
+.row li {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+    padding-right: calc(4.5rem * .5);
+    padding-left: calc(4.5rem * .5);
+}
+
+.row li div {
+    display: grid;
+    place-content: center;   
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    aspect-ratio: var(--ratio-square);
+    background: var(--brand-bg-gradient);
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-9);
+    color: var(--surface-1);
+    text-align: center;
+    border-radius: var(--radius-blob-1);
+}
+
+.row li div span {
+    display: block;
+    margin: 15px 0 0;
+    font-size: var(--font-size-0);
+    font-weight: var(--font-weight-1);
+}
+
+.box {
+    width: 100px;
+    height: 100px; 
+    background: #3182f6;
 }

@@ -13,7 +13,8 @@ const DataImg = ( props ) => {
 
     return (
         <>
-        <div className="flex items-center space-x-1 text-blue-600">
+
+        <div>
             <Image
                 src='/img5.png'
                 alt="Picture of the author"
@@ -22,22 +23,22 @@ const DataImg = ( props ) => {
                 priority
             />
         </div> <br />
-        <p>안녕하세요 props 값은 {name} 입니다.</p> <br />
-        <p>안녕하세요 child 값은 {children}</p> <br />
-        <p>제가 좋아하는 숫자는 PropTypes {favoriteNumber}</p> <br />
+        <p>안녕하세요 props 값은 {name} 입니다.</p>
+        <p>안녕하세요 child 값은 {children}</p>
+        <p>제가 좋아하는 숫자는 PropTypes {favoriteNumber}</p>
 
-        <button onClick={onClickEnter}>입장</button> &nbsp;
-        <button onClick={onClickLeave}>퇴장</button>
+        <a href="javascript:" role="button" onClick={onClickEnter}>입장</a> &nbsp;
+        <a href="javascript:" role="button" onClick={onClickLeave}>퇴장</a>
 
-        <h1 className='font-bold' style={{ color }}>{message}</h1> <br />
+        <h1 className='font-bold' style={{ color }}>{message}</h1>
 
-        <button style={{ color: 'blue' }} onClick={() => setColor('blue')}>
+        <a href="javascript:" role="button" class="secondary outline" onClick={() => setColor('blue')} style={{ color: 'blue' }}>
             파랑색
-        </button> &nbsp;
+        </a> &nbsp;
 
-        <button style={{ color: 'green' }} onClick={() => setColor('green')}>
+        <a href="javascript:" role="button" class="secondary outline" onClick={() => setColor('green')} style={{ color: 'green' }}>
             초록색
-        </button> <br />
+        </a>
 
         </>
     )

@@ -3,8 +3,9 @@ import Link from 'next/link'
 
 import Router from 'next/router'
 
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
 
 export default function Movie({ movie }) {
 
@@ -20,21 +21,28 @@ export default function Movie({ movie }) {
         const json = await response.json()
         console.log(json)
 
-        return Router.push('/page11')
+        return Router.push('/movieList')
     }
 
     return (
         <Layout>
-            <div>
-                <h2>{movie.title}</h2>
-                <p>{movie.description}</p>
+            <div className="bod-template">
+                <div className="bod-head">
+                    <span className="cat">{movie && movie.description}</span>
+                    <h2 className="tit">{movie && movie.title}</h2>
+                    <p><time className="css-qy">{movie && movie.year}</time></p>
+                </div>
             </div>
 
-            <Link href={`/page11`}>
-                돌아가기
-            </Link> <br />
+            <div className="grid">
+                <Link href={`/movieList`} role="button" className="secondary">
+                    List 돌아가기
+                </Link>      
 
-            <button onClick={() => handleDeleteData(movie.id)}>삭제하기</button>
+                <Link href="javascript" role="button" className="contrast" onClick={() => handleDeleteData(movie.id)}>
+                    삭제하기
+                </Link> 
+            </div>
         </Layout>
     )
 }

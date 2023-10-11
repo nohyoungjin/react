@@ -1,5 +1,4 @@
 import useSWR from 'swr'
-
 import Layout from 'components/Layout/Layout'
 
 const fetchCurrenttime = async () => {
@@ -13,6 +12,7 @@ const fetchCurrenttime = async () => {
 }
 
 export default function App() {
+
     const { data, error, mutate, isValidating } = useSWR(
         '/api',
         fetchCurrenttime,

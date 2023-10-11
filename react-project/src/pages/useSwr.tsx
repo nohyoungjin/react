@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react"
 import useSWR, { SWRConfig } from 'swr'
 import useSWRInfinite from 'swr/infinite'
 
@@ -18,6 +19,8 @@ export async function getServerSideProps() {
 }
 
 function Repo() {
+    const pTagFocus = useRef([])
+
     const { data, error, isLoading } = useSWR(API)
 
     if (error) return "An error has occurred."
@@ -26,10 +29,17 @@ function Repo() {
     return (
         <Layout>
             <ul>
-                {data?.map(item => (
-                    <li key={item.id}>🍴 {item.name} ✨ 👁</li>
+                {data?.map((item, idx) => (
+                    <li>
+                        <a href="" key={idx} ref={(val) => (pTagFocus.current[idx] = val)}>
+                            🍴 {item.name} ✨ 👁
+                        </a>
+                    </li>
                 ))}
             </ul>
+            <button onClick={() => pTagFocus.current['1'].focus()}>
+                focus test
+            </button>
         </Layout>
     )
 }

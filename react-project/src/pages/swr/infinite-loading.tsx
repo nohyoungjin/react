@@ -36,7 +36,7 @@ export default function App() {
                     value={val}
                     onChange={(e) => setVal(e.target.value)}
                     placeholder="reactjs/react-a11y"
-                    class="hidden"
+                    className="hidden"
                 />
                 <button
                     onClick={() => {
@@ -72,11 +72,9 @@ export default function App() {
                 <div>
                     {issues.map((issue) => {
                         return (
-                            
                             <div key={issue.sortA} style={{ margin: "6px 0" }}>
                                 - {issue.province} : {issue.city} / {issue.store}
                             </div>
-                            
                         )
                     })}
                 </div>

@@ -45,68 +45,56 @@ const Header = () => {
         </ul>
 
         <ul>
-            {/* <Link legacyBehavior href={"/page1"}>
-                <a className="text-sm font-medium text-gray-700 hover:text-gray-900">
-                    로컬 json(map)
-                </a>
-            </Link> */}
-
             {/* <Link legacyBehavior href={"/page2"}>
-                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                <a className="secondary">
                     외부 json(axios)
                 </a>
             </Link> */}
 
             {/* <Link legacyBehavior href={"/page3"}>
-                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                <a className="secondary">
                     컴포넌트
                 </a>
             </Link> */}   
 
             {/* <Link legacyBehavior href={"/page4"}>
-                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                <a className="secondary">
                     이벤트 핸들링
                 </a>
             </Link> */}        
 
             {/* <Link legacyBehavior href={"/page5?pid=query"}>
-                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                <a className="secondary">
                     useEffect
                 </a>
             </Link> */}
 
             {/* <Link legacyBehavior href={"/page6"} shallow>
-                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                <a className="secondary">
                     useReducer
                 </a>
             </Link> */}
 
             {/* <Link legacyBehavior href={"/page7"}>
-                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                <a className="secondary">
                     Todo App
                 </a>
             </Link> */}
 
             {/* <Link legacyBehavior href={"/newsViewer"}>
-                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                <a className="secondary">
                     뉴스뷰어
                 </a>
             </Link> */}
 
-            {/* <Link legacyBehavior href={"/page11"}>
-                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                    MySql 연동(Prisma)
-                </a>
-            </Link> */}     
-
             {/* <Link legacyBehavior href={"/useSwr"}>
-                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                <a className="secondary">
                     Swr
                 </a>
             </Link> */}              
 
             {/* <Link legacyBehavior href={"/blog/posts"}>
-                <a className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                <a className="secondary">
                     블로그(fauna)
                 </a>
             </Link> */}  
@@ -131,6 +119,13 @@ const Header = () => {
                     <a className="secondary">인피니트 로딩</a>
                 </Link> 
             </li>
+            <li>
+                <Link legacyBehavior href={"/movieList"}>
+                    <a className="secondary">
+                        MySql 연동(Prisma)
+                    </a>
+                </Link>  
+            </li>          
             { /* renderThemechanger() */ }                                                                                                                                                 
         </ul>
     </nav>
