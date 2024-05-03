@@ -45,7 +45,9 @@ export default function Home({ data }) {
                 </div>
 
                 <ul>
-                    {movies.map(item => (
+                    {movies
+                    .sort((a, b) => a.id < b.id ? 1 : -1)
+                    .map(item => (
                         <li key="item.id">
                             <Link href={`/movies/${item.slug}`} className="bod-container">
                                 <div className="box-cont" aria-hidden="true">

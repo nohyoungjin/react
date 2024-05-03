@@ -7,6 +7,10 @@ import Link from 'next/link'
 
 import { PrismaClient } from '@prisma/client'
 
+import dynamic from "next/dynamic"
+
+const NoSsrWysiwyg = dynamic(()=> import('containers/Page/WysiwygEditor'), { ssr : false } ) 
+
 const prisma = new PrismaClient()
 
 export default function Home({ data }) {
@@ -88,6 +92,7 @@ export default function Home({ data }) {
                 />
                 <button type="submit">저장</button>
             </form>
+
         </Layout>
     )
 }
